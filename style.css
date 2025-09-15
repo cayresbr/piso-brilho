@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --button: #e4cc6c;
+  --shade: #d9c168;
+  --letters: #5e4e21;
+  --nav-footer: #f9e2c0;
+  --color4: #9a8a4e;
+  --color5: #d3cfcb;
+  --white: #fff;
+  --box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.555);
+}
+
+section {
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+header {
+  background-color: var(--nav-footer);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  border-bottom: 0.1rem solid var(--color5);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px; /* só controla a logo */
+  display: block; /* garante que a imagem se comporte bem */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--letters);
+}
+
+.navbar a:hover {
+  color: var(--color4);
+  border-bottom: 0.1rem solid var(--color5);
+  padding-bottom: 0.1rem;
+  font-size: 1.1rem;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+}
+
+.hero-description {
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 25px;
+  text-align: justify;
+}
+
+.quote-button {
+  background-color: #7697b6;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  transition: all 0.4s ease-out;
+}
+
+.quote-button:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+}
+
+.hero-img img {
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.4s ease-out;
+}
+
+.hero-img img:hover {
+  transform: translateY(-5px);
+  transition: all 0.4s ease-in;
+}
+
+.projects {
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-description {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+.card-section {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.project-card {
+  background-color: #e6e4e3;
+  padding: 15px;
+  border-radius: 15px;
+  transition: all 0.4s ease-out;
+}
+
+.project-card:hover {
+  transform: translateY(-20px);
+  transition: all 0.4s ease-in;
+}
+
+.project-card img {
+  width: 300px;
+  margin-bottom: 10px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.project-card p {
+  max-width: 290px;
+  font-weight: 300;
+}
+
+.contact-us {
+  width: 100%;
+  padding: 20px;
+}
+
+.contact-us h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.form {
+  flex: 1;
+  padding: 10px;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(59, 180, 240, 0.144);
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea,
+.form button {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.form button {
+  background-color: var(--color5);
+  color: black;
+  border: none;
+  width: 90px;
+  transition: all 0.2s ease-in-out;
+}
+
+.form button:hover {
+  opacity: 0.7;
+}
+
+.contact-info {
+  flex: 1;
+  padding: 10px;
+}
+
+.contact-info iframe {
+  border-radius: 10px;
+}
+
+.contact-info img {
+  width: 30px;
+  border-radius: 5px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+footer svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-container {
+  background-color: var(--nav-footer);
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
