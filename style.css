@@ -8,6 +8,7 @@
 /* ESTILOS GLOBAIS */
 body {
   font-family: "Roboto", sans-serif;
+  
 }
 
 a {
@@ -58,9 +59,9 @@ ol {
   --button: #ffd6a5;      /* botão laranja pastel */
   --shade: #ffcad4;       /* sombreado rosa pastel */
   --letters: #1a1817;     /* marrom suave para textos */
-  --nav-footer: rgb(191, 253, 255);  /* verde pastel no menu/rodapé */
-  --color4: #a0c4ff;      /* azul pastel para hover */
-  --color5: #bdb2ff;      /* lilás pastel */
+  --header-footer: #F1EBE1;  /* verde pastel no menu/rodapé */
+  --button: #a0c4ff;      /* azul pastel para hover */
+  --bg-card: #e6e4e3;      /* lilás pastel */
   --white: #fff;
   --box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.2); /* sombra mais leve */
 }
@@ -75,7 +76,7 @@ section {
 
 /* HEADER */
 header {
-  background-color: var(--nav-footer);
+  background-color: var(--header-footer);
   position: fixed;
   top: 0;
   width: 100%;
@@ -95,8 +96,8 @@ header {
 
 /* LOGO */
 .logo img {
-  max-width: 100px;
-  height: auto;
+  width: auto;
+  height: 90px;
   display: block;
 }
 
@@ -110,7 +111,7 @@ header {
 
 .navbar a {
   margin: 0 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--letters);
   border-bottom: 0 solid transparent;
@@ -163,7 +164,7 @@ p {
 
 /* BOTÃO HERO */
 .quote-button {
-  background-color: #7697b6;
+  background-color: var(--button);
   color: var(--white);
   font-size: 1rem;
   font-weight: 600;
@@ -218,7 +219,7 @@ p {
 }
 
 .project-card {
-  background-color: #e6e4e3;
+  background-color: var(--bg-card);
   padding: 15px;
   border-radius: 15px;
   transition: transform 0.4s ease-out;
@@ -276,7 +277,6 @@ p {
   gap: 10px;
   padding: 5px;
   border-radius: 5px;
-  background-color: rgba(59, 180, 240, 0.144);
 }
 
 .form label {
@@ -290,19 +290,22 @@ p {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid;
+  border: 1px solid var(--button);
 }
 
 .form button {
   background-color: var(--color5);
   color: black;
-  border: none;
+  border: 1px solid var(--button);
   width: 90px;
-  transition: opacity 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .form button:hover {
   opacity: 0.7;
+  color: var(--white);
+  background-color: var(--button);
+  transition: all 0.3s ease-in-out;
 }
 
 .contact-info {
@@ -323,19 +326,36 @@ p {
 
 /* FOOTER */
 footer {
+  background-image: url(assets/bkground.png);
   width: 100%;
+  height: auto;
   text-align: center;
   position: relative;
 }
 
-footer svg {
-  display: block;
+.footer-curve {
+  position: relative;
+  background: var(--header-footer);
+  color: var(--letters);
+  text-align: center;
+  padding: 0px;
+  
+}
+
+.footer-curve::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  margin-top: 15px;
   width: 100%;
-  height: auto;
+  height: 35px;
+  background: var(--header-footer);
+  border-top-left-radius: 100% 50px;
+  border-top-right-radius: 100% 50px;
 }
 
 .footer-container {
-  background-color: var(--nav-footer);
   padding: 10px;
   width: 100%;
   display: flex;
@@ -358,7 +378,7 @@ footer svg {
   }
 
   .hero-img img {
-    max-width: 100%;
+    max-width: 550px;
   }
 
   .contact-container {
@@ -378,15 +398,22 @@ footer svg {
   }
 
   .logo img {
-    width: 60px;
-  }
+  width: auto;
+  height: 90px;
+  display: block;
+}
 
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
   }
 
+  .hero img {
+    max-width: 550px;
+  }
+
   h1 {
+    margin-top: 25px;
     font-size: 2rem;
   }
 
@@ -395,7 +422,7 @@ footer svg {
   }
 
   .quote-button {
-    width: 100%;
+    width: auto;
     text-align: center;
   }
 
@@ -408,6 +435,12 @@ footer svg {
   .hero {
     padding: 2rem 1rem;
   }
+
+  .logo img {
+  width: auto;
+  height: 90px;
+  display: block;
+}
 
   .navbar {
     flex-direction: column;
@@ -470,6 +503,10 @@ footer svg {
 
   .hero-description h1 {
     font-size: 1.8rem;
+  }
+
+  .project-card {
+    margin: 5px;
   }
 
   .contact-us h2 {
