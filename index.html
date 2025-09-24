@@ -19,7 +19,6 @@
           <a href="#home">
             <img src="assets/logonovo.png" alt="piso-brilho-logo" />
           </a>
-          
         </div>
 
         <input type="checkbox" id="menu-toggle" />
@@ -136,11 +135,12 @@
         <h2>Fale conosco</h2>
         <div class="contact-container">
           <div class="form">
-            <form>
+            <form id="contact-form">
               <label for="name">Nome</label>
               <input
                 type="text"
                 id="name"
+                name="from_name"
                 placeholder="Nome Completo"
                 required
               />
@@ -149,6 +149,7 @@
               <input
                 type="email"
                 id="email"
+                name="from_email"
                 placeholder="Seu melhor E-mail aqui"
                 required
               />
@@ -163,7 +164,7 @@
                 required
               ></textarea>
 
-              <button class="sent-button">Enviar</button>
+              <button type="submit" class="sent-button">Enviar</button>
             </form>
           </div>
 
@@ -188,6 +189,7 @@
         </div>
       </footer>
     </main>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
