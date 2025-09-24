@@ -8,7 +8,6 @@
 /* ESTILOS GLOBAIS */
 body {
   font-family: "Roboto", sans-serif;
-  
 }
 
 a {
@@ -23,11 +22,11 @@ ol {
 }
 
 #menu-toggle {
-  display: none; /*Esconder o checkbox*/
+  display: none; /* Esconde o checkbox */
 }
 
 .menu-icon {
-  display: none; /*So aparece no mobile*/
+  display: none; /* Só aparece no mobile */
   width: 30px;
   height: 22px;
   position: relative;
@@ -56,16 +55,16 @@ ol {
 
 /* VARIÁVEIS */
 :root {
-  --button: #ffd6a5;      /* botão laranja pastel */
-  --shade: #ffcad4;       /* sombreado rosa pastel */
-  --letters: #1a1817;     /* marrom suave para textos */
-  --header-footer: #F1EBE1;  /* verde pastel no menu/rodapé */
-  --button: #a0c4ff;      /* azul pastel para hover */
-  --bg-card: #e6e4e3;      /* lilás pastel */
+  --button: #ffd6a5; /* botão laranja pastel */
+  --hover: #a0c4ff; /* hover azul pastel */
+  --color5: #bdb2ff; /* lilás pastel */
+  --letters: #1a1817; /* marrom suave para textos */
+  --header-footer: #f1ebe1; /* verde pastel no menu/rodapé */
+  --nav-footer: 191, 253, 255; /* guardo os canais RGB para usar com alpha */
+  --bg-card: #e6e4e3;
   --white: #fff;
-  --box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.2); /* sombra mais leve */
+  --box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* SEÇÕES */
 section {
@@ -76,12 +75,16 @@ section {
 
 /* HEADER */
 header {
-  background-color: var(--header-footer);
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.438) 100%),
+    url(assets/bkimg.jpg);
+  background-size: cover;
+  background-position: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 99;
-  border-bottom: 0.1rem solid var(--color5);
+  border-bottom: 0.1rem solid var(--white);
 }
 
 /* CONTAINER */
@@ -118,9 +121,8 @@ header {
 }
 
 .navbar a:hover {
-  color: var(--color4);
-  border-bottom: 0.1rem solid var(--letters);
-  /* sem mudar font-size para evitar pulos */
+  color: var(--hover);
+  border-bottom: 0.1rem solid var(--hover);
 }
 
 /* MAIN */
@@ -156,6 +158,10 @@ h1 {
   font-size: 2.5rem;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 p {
   font-size: 1rem;
   line-height: 25px;
@@ -173,11 +179,12 @@ p {
   border-radius: 10px;
   border: none;
   box-shadow: var(--box-shadow);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transition: all 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .quote-button:hover {
-  opacity: 0.9;
+  opacity: 0.7;
+  color: var(--letters);
   transform: translateY(-3px);
 }
 
@@ -294,8 +301,8 @@ p {
 }
 
 .form button {
-  background-color: var(--color5);
-  color: black;
+  background-color: var(--button);
+  color: var(--white);
   border: 1px solid var(--button);
   width: 90px;
   transition: all 0.3s ease-in-out;
@@ -303,7 +310,7 @@ p {
 
 .form button:hover {
   opacity: 0.7;
-  color: var(--white);
+  color: var(--letters);
   background-color: var(--button);
   transition: all 0.3s ease-in-out;
 }
@@ -335,11 +342,14 @@ footer {
 
 .footer-curve {
   position: relative;
-  background: var(--header-footer);
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.438) 100%),
+    url(assets/bkimg.jpg);
+  background-size: cover;
+  background-position: center;
   color: var(--letters);
   text-align: center;
   padding: 0px;
-  
 }
 
 .footer-curve::before {
@@ -350,7 +360,9 @@ footer {
   margin-top: 15px;
   width: 100%;
   height: 35px;
-  background: var(--header-footer);
+  background-image:url(assets/bkimg.jpg);
+  background-size: cover;
+  background-position: center;
   border-top-left-radius: 100% 50px;
   border-top-right-radius: 100% 50px;
 }
@@ -397,19 +409,13 @@ footer {
     padding: 10px;
   }
 
-  .logo img {
-  width: auto;
-  height: 90px;
-  display: block;
-}
-
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .hero img {
-    max-width: 550px;
+  .hero-img img {
+    max-width: 80%;
   }
 
   h1 {
@@ -436,26 +442,18 @@ footer {
     padding: 2rem 1rem;
   }
 
-  .logo img {
-  width: auto;
-  height: 90px;
-  display: block;
-}
-
   .navbar {
     flex-direction: column;
-    background-color: var(--nav-footer.0.9);
     backdrop-filter: blur(7px);
     opacity: 0;
     position: absolute;
-    top: 70px;
+    top: 0px;
     left: 0;
     width: 100%;
     padding: 1rem;
     gap: 1rem;
-    border-top: 1px solid var(--color5);
     pointer-events: none;
-    transform: translateY(-20px);
+    transform: translateY(-40px);
     transition: all 0.4s ease-in-out;
   }
 
@@ -494,7 +492,7 @@ footer {
 
   .navbar:hover {
     border-bottom: 1px solid var(--letters);
-    color: var(--color4);
+    color: var(--hover);
   }
 
   .hero-description {
