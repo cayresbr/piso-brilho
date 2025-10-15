@@ -5,7 +5,7 @@ document.querySelectorAll('.navbar a').forEach(link => {
 });
 
 document.getElementById("btnWhatsapp").addEventListener("click", function() {
-  let phone = "+13853548997";
+  let phone = "+5511997508234";
   let message = "Ola, gostaria de solicitar um orcamento!";
   let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
