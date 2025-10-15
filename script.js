@@ -4,6 +4,13 @@ document.querySelectorAll('.navbar a').forEach(link => {
   });
 });
 
+document.getElementById("btnWhatsapp").addEventListener("click", function() {
+  let phone = "+13853548997";
+  let message = "Ola, gostaria de solicitar um orcamento!";
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+});
+
 
 // inicializa o EmailJS
 emailjs.init("KGrN1EmfJb2yguvIp"); // substitua pelo seu User ID
@@ -21,3 +28,5 @@ form.addEventListener('submit', function(event) {
       alert('Erro ao enviar a mensagem: ' + JSON.stringify(err));
     });
 });
+
+
